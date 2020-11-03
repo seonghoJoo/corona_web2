@@ -16,8 +16,8 @@
 	}
 	
 	int total = TripDAO.selectTotal(); 
-	int numPage = 2;	
-	int numBlock = 2; // 블록 개수
+	int numPage = 3;	
+	int numBlock = 3; // 블록 개수
 	
 	String url = "/index.jsp"; // 페이지 주소
 	String param = "pageNo=";
@@ -35,25 +35,21 @@
 	if(pageNo!= 1 && trips.isEmpty()){
 		response.sendRedirect("/index.jsp?pageNo=1");
 	}//if end
-	
-	char[] mask = {'M','N'};
-	String[] emotionIcons = {"head-side-mask", "times"};
 %>
 <!DOCTYPE html>
 <html lang="ko">
 	<head>
 		<meta charset="utf-8">
-		<title>코로나 확진자 리스트</title>
+		<title>확진자 방문 장소 리스트</title>
 		<!-- index.html, writeForm.html의 공통된 CSS를 default.css에 -->
 		<%@ include file="/WEB-INF/template/link.jsp" %>
 	 	<link rel="stylesheet" href="/css/index.css" /> 
 	</head>
 	<body>
 		<%@ include file="/WEB-INF/template/header.jsp" %>
-		    <h2><i class="fas fa-book"></i> 확진자 리스트</h2>
-<ul>
+			<ul>
 			<%if(trips.size() == 0){ %>
-				<li class="no"><i class="far fa-sad-tear"></i> 확진자가 없습니다.</li>
+				<li class="no"><i class="fas fa-times-circle"></i> 확진자가 없습니다.</li>
 				<%
 				}else{
 					
@@ -62,22 +58,27 @@
 				<li>
 					<h3>
 						<strong>
-							<i class="far fa-<%=c.get%>"></i>
-							<%= c.getNum()%>번 확진자
+							<i class="fas fa-<%=trip.getMask()=='M'?"check":"times"%>"></i>
+							<%=trip.getGu() %> 확진자
 						</strong>
-						<time><i class="far fa-clock"></i>
-						<%= guest.getRegdate() %></time>
-						<%if(ip.equals(guest.getIp())){ %>
-						<a href="/delete.guest?no=<%=guest.getNo() %>" class="delete btn"><i class="far fa-trash-alt"></i> 삭제</a>
-						<a href="/editForm.jsp?no=<%=guest.getNo() %>" class="update btn"><i class="far fa-edit"></i> 수정</a>
-						<%} %>
+						<time><i class="fas fa-clock"></i>
+						<%= trip.getRegdate() %></time>
+						<a href="/delete.guest?no=<%=trip.getNo() %>" class="delete btn"><i class="far fa-trash-alt"></i> 삭제</a>
+						<a href="/editForm.jsp?no=<%=trip.getNo() %>" class="update btn"><i class="far fa-edit"></i> 수정</a>
 					</h3>
-					<p><%= guest.getContents() %></p>
+					<p><%= trip.getPlace() %></p>
+					<p><%= trip.getCity() + trip.getGu() %></p>
+					<p><%= trip.getStartMonth()%>월 <%=trip.getStartDay()%>일 ~ <%= trip.getEndMonth()%>월 <%=trip.getEndDay()%>일</p>
+					<p id="time"></p>
 				</li>
 			<%} }%>
 				</ul><!-- #// ul end -->
 				<div class="btn_box">
 					<a class="btn" href="/writeForm.jsp"><i class="fas fa-pencil-alt"></i> 글쓰기</a>
+					<button class="btn"><i class="fas fa-pencil-alt"></i> 최근</button>
 				</div>
 				<%= paginate%>
 		<%@ include file="/WEB-INF/template/footer.jsp" %>
+</body>
+</html>
+		

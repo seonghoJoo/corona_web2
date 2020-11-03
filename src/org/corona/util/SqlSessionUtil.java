@@ -12,7 +12,7 @@ public class SqlSessionUtil {
 	
 	static {
 		try {
-			Reader reader = Resources.getResourceAsReader("org/coronak/config/mybatis-config.xml");
+			Reader reader = Resources.getResourceAsReader("org/corona/config/mybatis-config.xml");
 			factory = new SqlSessionFactoryBuilder().build(reader);
 		}catch(Exception e) {
 			e.printStackTrace();

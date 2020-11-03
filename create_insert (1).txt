@@ -14,34 +14,117 @@ CREATE TABLE "TRIPS"(
 "NUM" NUMBER(8,0),
 "REGDATE" TIMESTAMP,
 CONSTRAINT "TRIPS" PRIMARY KEY ("NO"));
-)
-INSERT INTO trip(no,place,city,gu,address,
+
+INSERT INTO trips(no,place,city,gu,address,
 start_date,end_date,
 latitude,longititude,mask,num,regdate)
 VALUES(trip_seq.nextval,'THE 멋진코인노래방','서울시','관악구','호암로 602 지하1층',
  TO_DATE('2020-10-17 16:30','YYYY-MM-DD HH24:MI'),TO_DATE('2020-10-17 17:10','YYYY-MM-DD HH24:MI'),
 37.4707706,126.9315833,'N',1, SYSTIMESTAMP)
 
-CREATE SEQUENCE "CASES"
-start with 1
-increment by 1
-maxvalue 9999999999
-minvalue 1
-nocache
-nocycle
-noorder;
+INSERT INTO trips(no,place,city,gu,address,
+start_date,end_date,
+latitude,longititude,mask,num,regdate)
+VALUES(trip_seq.nextval,'왕돈까스&왕냉면 서울대역점','서울시','관악구','봉천로 474',
+ TO_DATE('2020-09-19 00:00','YYYY-MM-DD HH24:MI'),TO_DATE('2020-09-26 23:59','YYYY-MM-DD HH24:MI'),
+37.4818798,126.9503382,'M',2, SYSTIMESTAMP)
 
-CREATE TABLE  "MOVIES" (
-"NO" NUMBER(9,0) NOT NULL ENABLE, 
-"NAME" VARCHAR2(200) NOT NULL ENABLE, 
-"RELEASE_DATE" DATE NOT NULL ENABLE, 
-"END_DATE" DATE, 
-"DIRECTOR" VARCHAR2(4000) NOT NULL ENABLE, 
-"AUDIENCE_NUM" NUMBER(9,0) NOT NULL ENABLE, 
-"GENRE" NUMBER(8,0) NOT NULL ENABLE, 
-CONSTRAINT "MOVIES_PK" PRIMARY KEY ("NO") ENABLE);
+INSERT INTO trips(no,place,city,gu,address,
+start_date,end_date,
+latitude,longititude,mask,num,regdate)
+VALUES(trip_seq.nextval,'럭키사우나','서울시','강남구','논현로 213 지하1층',
+ TO_DATE('2020-10-19 00:00','YYYY-MM-DD HH24:MI'),TO_DATE('2020-10-23 23:59','YYYY-MM-DD HH24:MI'),
+37.4904185,127.0379972,'N',4, SYSTIMESTAMP)
+ 	
+INSERT INTO trips(no,place,city,gu,address,
+start_date,end_date,
+latitude,longititude,mask,num,regdate)
+VALUES(trip_seq.nextval,'럭키사우나','서울시','강남구','논현로 213 지하1층',
+ TO_DATE('2020-10-23 09:00','YYYY-MM-DD HH24:MI'),TO_DATE('2020-10-23 14:30','YYYY-MM-DD HH24:MI'),
+37.4904185,127.0379972,'N',5, SYSTIMESTAMP)
 
-ALTER TABLE  "MOVIES" ADD CONSTRAINT "MOVIES_FK" FOREIGN KEY ("GENRE") REFERENCES  "GENRES" ("NO") ENABLE;
+INSERT INTO trips(no,place,city,gu,address,
+start_date,end_date,
+latitude,longititude,mask,num,regdate)
+VALUES(trip_seq.nextval,'럭키사우나','서울시','강남구','논현로 213 지하1층',
+ TO_DATE('2020-10-23 15:00','YYYY-MM-DD HH24:MI'),TO_DATE('2020-10-23 18:00','YYYY-MM-DD HH24:MI'),
+37.4904185,127.0379972,'N',6, SYSTIMESTAMP)
+
+INSERT INTO trips(no,place,city,gu,address,
+start_date,end_date,
+latitude,longititude,mask,num,regdate)
+VALUES(trip_seq.nextval,'럭키사우나','서울시','강남구','논현로 213 지하1층',
+ TO_DATE('2020-10-24 09:00','YYYY-MM-DD HH24:MI'),TO_DATE('2020-10-24 10:30','YYYY-MM-DD HH24:MI'),
+37.4904185,127.0379972,'N',7, SYSTIMESTAMP)
+
+INSERT INTO trips(no,place,city,gu,address,
+start_date,end_date,
+latitude,longititude,mask,num,regdate)
+VALUES(trip_seq.nextval,'럭키사우나','서울시','강남구','논현로 213 지하1층',
+ TO_DATE('2020-10-24 11:00','YYYY-MM-DD HH24:MI'),TO_DATE('2020-10-24 14:00','YYYY-MM-DD HH24:MI'),
+37.4904185,127.0379972,'N',8, SYSTIMESTAMP)
+
+INSERT INTO trips(no,place,city,gu,address,
+start_date,end_date,
+latitude,longititude,mask,num,regdate)
+VALUES(trip_seq.nextval,'럭키사우나','서울시','강남구','논현로 213 지하1층',
+ TO_DATE('2020-10-25 09:00','YYYY-MM-DD HH24:MI'),TO_DATE('2020-10-25 16:00','YYYY-MM-DD HH24:MI'),
+37.4904185,127.0379972,'N',8, SYSTIMESTAMP)
+
+INSERT INTO trips(no,place,city,gu,address,
+start_date,end_date,
+latitude,longititude,mask,num,regdate)
+VALUES(trip_seq.nextval,'럭키사우나','서울시','강남구','논현로 213 지하1층',
+ TO_DATE('2020-10-26 09:30','YYYY-MM-DD HH24:MI'),TO_DATE('2020-10-26 15:00','YYYY-MM-DD HH24:MI'),
+37.4904185,127.0379972,'N',8, SYSTIMESTAMP)
+
+INSERT INTO trips(no,place,city,gu,address,
+start_date,end_date,
+latitude,longititude,mask,num,regdate)
+VALUES(trip_seq.nextval,'럭키사우나','서울시','강남구','논현로 213 지하1층',
+ TO_DATE('2020-10-27 10:30','YYYY-MM-DD HH24:MI'),TO_DATE('2020-10-27 12:30','YYYY-MM-DD HH24:MI'),
+37.4904185,127.0379972,'N',8, SYSTIMESTAMP)
+
+INSERT INTO trips(no,place,city,gu,address,
+start_date,end_date,
+latitude,longititude,mask,num,regdate)
+VALUES(trip_seq.nextval,'럭키사우나','서울시','강남구','논현로 213 지하1층',
+ TO_DATE('2020-10-28 10:00','YYYY-MM-DD HH24:MI'),TO_DATE('2020-10-28 20:40','YYYY-MM-DD HH24:MI'),
+37.4904185,127.0379972,'N',8, SYSTIMESTAMP)
+
+
+
+INSERT INTO trips(no,place,city,gu,address,
+start_date,end_date,
+latitude,longititude,mask,num,regdate)
+VALUES(trip_seq.nextval,'삼모스포렉스 수영장 헬스장','서울시','관악구','신림로 59길 23',
+ TO_DATE('2020-10-16 00:00','YYYY-MM-DD HH24:MI'),TO_DATE('2020-10-21 23:59','YYYY-MM-DD HH24:MI'),
+37.4826687,126.9264721,'M',196, SYSTIMESTAMP)
+
+INSERT INTO trips(no,place,city,gu,address,
+start_date,end_date,
+latitude,longititude,mask,num,regdate)
+VALUES(trip_seq.nextval,'삼모스포렉스 수영장 헬스장','서울시','관악구','신림로 59길 23',
+ TO_DATE('2020-10-16 00:00','YYYY-MM-DD HH24:MI'),TO_DATE('2020-10-21 23:59','YYYY-MM-DD HH24:MI'),
+37.4826687,126.9264721,'M',3, SYSTIMESTAMP)
+
+INSERT INTO trips(no,place,city,gu,address,
+start_date,end_date,
+latitude,longititude,mask,num,regdate)
+VALUES(trip_seq.nextval,'삼모스포렉스 수영장 헬스장','서울시','관악구','신림로 59길 23',
+ TO_DATE('2020-10-16 00:00','YYYY-MM-DD HH24:MI'),TO_DATE('2020-10-21 23:59','YYYY-MM-DD HH24:MI'),
+37.4826687,126.9264721,'M',3, SYSTIMESTAMP)
+
+
+
+
+
+INSERT INTO trips(no,place,city,gu,address,
+start_date,end_date,
+latitude,longititude,mask,num,regdate)
+VALUES(trip_seq.nextval,'삼모스포렉스 수영장 헬스장','서울시','관악구','신림로 59길 23',
+ TO_DATE('2020-10-16 00:00','YYYY-MM-DD HH24:MI'),TO_DATE('2020-10-21 23:59','YYYY-MM-DD HH24:MI'),
+37.4826687,126.9264721,'M',3, SYSTIMESTAMP)
 
 CREATE SEQUENCE "MOVIES_SEQ"
 start with 1
@@ -51,124 +134,3 @@ minvalue 1
 nocache
 nocycle
 noorder;
-
-/* 2) 장르, 영화 INSERT 구문 */
-
-INSERT INTO genres(no,name) VALUES(1,'SF');
-INSERT INTO genres(no,name) VALUES(2,'드라마');
-INSERT INTO genres(no,name) VALUES(3,'애니메이션');
-INSERT INTO genres(no,name) VALUES(4,'액션');
-INSERT INTO genres(no,name) VALUES(5,'로맨스/멜로');
-INSERT INTO genres(no,name) VALUES(6,'판타지');
-INSERT INTO genres(no,name) VALUES(7,'가죽');
-INSERT INTO genres(no,name) VALUES(8,'뮤지컬');
-INSERT INTO genres(no,name) VALUES(9,'스릴러');
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'담보','2020-09-29',null,'강대규',1315616,2);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'언힌지드','2020-10-07',null,'데릭 보르테',103184,9);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'국제수사','2020-09-29 ',null,'김봉한',528814,4);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'그린랜드','2020-09-29',null,'릭 로만 워',311578,4);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'테넷','2020-08-26',null,'크리스토퍼 놀란',1888815,1);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'애프터: 그 후','2020-10-07',null,'로저 컴블',30390,5);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'극장판 포켓몬스터 뮤츠의 역습','2020-09-30',null,'유야마 쿠니히코',87855 ,3);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'그대, 고맙소 : 김호중 생애 첫 팬미팅 무비','2020-09-29',null,'김호중',80207,8);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'어디갔어, 버나뎃','2020-10-08',null,'리처드 링클레이터',21698,2);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'브레이크 더 사일런스: 더 무비','2020-09-24',null,'박준수',125768,8);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'아이언맨','2008-04-14','2008-06-19','존 파브로',4316003,1);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'아이언맨2','2010-04-27','2010-06-09','존 파브로',4498335,1);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'아이언맨3','2013-04-24','2013-06-26','셰인 블랙',9001309,1);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'스파이더맨 : 홈커밍','2017-07-05','2017-08-21','존 왓츠',7258678,1);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'스파이더맨 : 뉴 유니버스','2018-12-12','2019-03-06','밥 퍼시케티',723450,1);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'스파이더맨 : 파 프롬 홈','2019-07-02','2019-08-27','존 왓츠',8021064,1);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'어벤져스 : 인피니티워','2018-04-25','2018-07-03','안소니 루소',11212710,1);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'어벤져스 : 엔드게임','2019-04-24','2019-07-01','안소니 루소',13934592,1);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'신과함께-죄와 벌','2017-12-20','2018-02-27','김용화',14410931,6);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'신과함께-인과 연','2018-08-01','2018-10-02','김용화',12276122,6);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'명량','2014-07-30','2014-10-31','김한민',17613682,2);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'블레이드 러너','1993-05-08','1993-05-20','리들리 스콧',7222,1);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'시카리오:암살자의 도시','2015-12-03','2015-12-12','드니 빌뇌브',153009,2);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'블레이드 러너 2049','2017-10-12','2018-01-24','드니 빌뇌브',321466,1);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'겨울왕국','2014-01-16','2014-04-06','크리스 벅',10296101,3);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'겨울왕국2','2019-11-21','2020-01-21','크리스 벅',13748109,3);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'월-E','2008-07-30','2008-10-01','앤드류 스탠튼',1320830,3);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'인셉션','2010-07-21','2010-10-27','크리스토퍼 놀란',5926948,4);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'다크나이트','2008-08-06','2008-10-01','크리스토퍼 놀란',4087355,6);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'다크나이트 라이즈','2012-07-19','2012-09-05','크리스토퍼 놀란',6399303,6);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'인터스텔라','2014-11-06','2015-02-21','크리스토퍼 놀란',10304503,1);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'덩케르크','2017-07-20','2017-08-14','크리스토퍼 놀란',2792705,4);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'위플래쉬','2015-03-12','2015-03-21','데이미언 셔젤',1589048,2);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'라라랜드','2016-12-07','2017-04-19','데이미언 셔젤',3570389,8);
-
-INSERT INTO movies(no,name,release_date,end_date,director,audience_num,genre)
-VALUES(movies_seq.nextval,'퍼스트맨','2018-10-18','2018-11-09','데이미언 셔젤',665984,2);
-
-INSERT INTO trips(no,place,start_date,end_date,latitude,longtitude,mask,num,city,gu,regdate,address,ro,gil)
-VALUES(trip_seq.nextval,'THE 멋진코인노래방', TO_CHAR('2020-10-17 16:30','YYYY-MM-DD HH24:MI'),
-TO_CHAR('2020-10-17 17:10','YYYY-MM-DD HH24:MI'),37.4707706,126.9315833,'N',454,'서울시','관악구', SYSTIMESTAMP,)
