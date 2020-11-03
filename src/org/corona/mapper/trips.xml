@@ -5,38 +5,52 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="trips">
 	<insert id="insert" parameterType="Trip">
-		INSERT INTO cases(no,num,city,gu)
-		VALUES (cases_seq.nextval,#{num},#{city},#{gu})
+		INSERT INTO trips(no,place,city,gu,address,
+					start_date,end_date,
+					latitude,longititude,mask,num,regdate)
+		VALUES (trip_seq.nextval,#{place},#{city},#{gu},#{address},
+					#{startDate},#{endDate},
+					#{latitude},#{longititude},#{mask},#{num},SYSTIMESTAMP)
 	</insert>
 	
 	<select id="selectList" resultType="Trip" parameterType="PageVO">
-		SELECT no,num,city,gu
-		FROM	(SELECT no,num,city,gu, rownum r
-				FROM 	(SELECT	no,num,city,gu
-						FROM	cases
-						ORDER BY 1 DESC))
+		SELECT 	no,place,city,gu,address,
+				startDate,endDate,
+				latitude,longititude,mask,num,regdate
+		FROM	(SELECT no,place,city,gu,address,
+								startDate,endDate,
+								latitude,longititude,mask,num,regdate, rownum r
+				FROM 	(SELECT	no,place,city,gu,address,
+								start_date startDate,end_date endDate,
+								latitude,longititude,mask,num,regdate
+						FROM	trips
+						ORDER BY 6 DESC,7 DESC))
 		WHERE r BETWEEN #{start} AND #{end}
 	</select>
 	
 	<select id="selectTotal" resultType="int">
 		SELECT	COUNT(*)
-		FROM	cases
+		FROM	trips
 	</select>
 	
 	<delete id="delete" parameterType="int">
-		DELETE FROM cases
+		DELETE FROM trips
 		WHERE no=#{no}
 	</delete>
 
 	<select id="selectOne" resultType="Trip" parameterType="int">
-		SELECT no,num,city,gu
-		FROM	cases
+		SELECT 	no,place,city,gu,address,
+				startDate,endDate,
+				latitude,longititude,mask,num,regdate
+		FROM	trips
 		WHERE no = #{no}
 	</select>
 	
 	<update id="update" parameterType="Trip">
-		UPDATE cases
-		SET num=#{num}, city=#{city}, gu=#{gu}
+		UPDATE trips
+		SET place=#{place},city=#{city},gu=#{gu},address=#{address},
+					start_date=#{startDate},end_date=#{endDate},
+					latitude=#{latitude},longititude=#{longititude},mask=#{mask},num=#{num}
 		WHERE no=#{no}
 	</update>
 	

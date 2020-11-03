@@ -6,3 +6,5 @@
 <link rel="stylesheet" href="/css/default.css" />
 <link rel="stylesheet" href="/css/paginate.css" />
 <link rel="icon" href="/favicon.png"/>
+<script src="/js/jquery.js"></script>
+<script src="/js/moment-with-locales.js"></script>

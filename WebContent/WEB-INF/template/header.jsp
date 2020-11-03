@@ -3,7 +3,7 @@
 
 <div id="wrap">
 	<div id="header">
-		<h1><a href="/"><i class="far fa-comment-dots"></i> 코로나 확진자 리스트</a></h1>
+		<h1><a href="/"><i class="fas fa-list"></i> 코로나 확진자 리스트</a></h1>
 	</div><!-- //#header  -->
 
 <div id="content">
