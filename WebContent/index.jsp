@@ -15,8 +15,10 @@
 		
 	}
 	
+	
+	
 	int total = TripDAO.selectTotal(); 
-	int numPage = 3;	
+	int numPage = 5;	
 	int numBlock = 3; // 블록 개수
 	
 	String url = "/index.jsp"; // 페이지 주소
