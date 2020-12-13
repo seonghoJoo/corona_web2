@@ -13,3 +13,13 @@ Eclipse
   * 삭제
   * 변경
   * 페이징 처리
+  
+## 기술 스택
+* JSP
+* HTML
+* CSS
+* Jquery
+* Javascript
+* Java
+* Oracle
+* MyBatis 추후 Spring으로 바뀔 예정
